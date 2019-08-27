@@ -42,9 +42,9 @@ function fibNext(n){
         lastTwo[1] = nextFib;
         counter++
     }
-    return lastTwo[1];
+	return n>1 ? lastTwo[1] : lastTwo[0];
 }
 
-console.log(fibNext(6));
+console.log(fibNext(3));
 // [0,1] => [1,1] => [1,2] => [2,3]=> [3,5]
 // counter => 3=> 4 =>5=>6=>7

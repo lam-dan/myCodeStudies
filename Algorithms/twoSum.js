@@ -38,6 +38,22 @@ function twoNumberSum(arr, targetSum) {
 
 console.log(twoNumberSum([3,5,-4,8,11,1,-1,6],10))
 
+function twoSum (array, target) {
+  const dict = {};
+
+  for (let i = 0; i < array.length; i++) {
+    const difference = target - array[i];
+
+		if(dict[difference]){
+      return [dict[difference], i];
+    }
+    dict[array[i]] = i;
+  }
+
+  return false;
+};
+
+console.log(twoSum([3,5,-4,8,11,1,-1,6],10))
 
 // Solution #3
 // Time Complexity is O(nLog(n)) since the sort is the biggest 
@@ -61,7 +77,8 @@ function twoNumberSum(arr, targetSum) {
   return [];
 } 
 
-console.log(twoNumberSum([3,5,-4,8,11,1,-1,6],10))
+// console.log(twoNumberSum([3,5,-4,8,11,1,-1,6],10))
+console.log(twoNumberSum([1,1,-2,2,3,-3,6,8,9],0))
 
 // Conclusion:
 // If you have value time the most, then solution #2 is the best as O(n) beats O(n^2) and O(n log n)

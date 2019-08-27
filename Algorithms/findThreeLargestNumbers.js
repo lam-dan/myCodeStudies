@@ -1,6 +1,6 @@
 // Find three largest numbers
-// Time Complexity: O(n)
-// Space Complexity: O(1)
+// For arrays containing 10 or fewer elements, time complexity of .sort is O(n^2), and space complexity is O(1). 
+// For longer arrays time complexity is Θ(n log(n)) (average case), and space complexity is O(log(n))
 let array = [141, 1, 17, -7, -17, 927, 18, 541, 8, 7, 7];
 function findThreeLargestNumbers(array) {
   let output = [];

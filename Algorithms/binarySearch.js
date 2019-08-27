@@ -5,20 +5,19 @@ let target = 72;
 // Time Complexity: O(log (N)) because we eleminate half of our input everytime we traverse.
 // Space Complexity: O(1) since we are not storing variables in memory.
 function binarySearch(array, target) {
+  let leftIdx = 0;
+  let rightIdx = array.length - 1;
 
-  let left = 0;
-  let right = array.length - 1;
+  while (leftIdx <= rightIdx) {
+    const middleIdx = Math.floor((leftIdx + rightIdx) / 2);
+    const potentialMatch = array[middleIdx];
 
-  while (left <= right) {
-    const middle = Math.floor((left+right)/2)
-    const potentialMatch = array[middle];
-
-    if( target === potentialMatch){
-      return middle
+    if (target === potentialMatch) {
+      return middleIdx;
     } else if (potentialMatch > target) {
-      right = middle - 1;
+      rightIdx = middleIdx - 1;
     } else {
-      left = middle + 1;
+      leftIdx = middleIdx + 1;
     }
   }
   return -1;
