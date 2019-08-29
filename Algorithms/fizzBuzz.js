@@ -17,4 +17,4 @@ function fizzBuzz(number){
     return result;
 }
 
-fizzBuzz(100);
+console.log(fizzBuzz(100));

@@ -38,6 +38,8 @@ function twoNumberSum(arr, targetSum) {
 
 console.log(twoNumberSum([3,5,-4,8,11,1,-1,6],10))
 
+// dict = {3:0,5:1,-4:2,8:3,11:4,1:5}
+
 function twoSum (array, target) {
   const dict = {};
 

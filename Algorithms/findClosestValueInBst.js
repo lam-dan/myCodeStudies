@@ -1,5 +1,4 @@
 //Binary Search Tree
-
 //Nodes in binary search trees are created with a value, left and right pointers
 //pointing to null.
 class Node {
