@@ -45,6 +45,7 @@ function moveZeroes2(arr) {
             indx++;
         }
     }
+
     for(var i = indx;i<arr.length;i++){
         arr[i] = 0;
     }

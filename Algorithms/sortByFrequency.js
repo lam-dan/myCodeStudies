@@ -3,6 +3,9 @@
  *  @param {array} array An array to sort
  *  @returns {array} array of item order by frequency
  **/
+//Example Suppose you have an array [2, 2, 1, 4, 2,5, 4,4,4, 5]
+//Answer : [ '4', '4', '4', '4', '2', '2', '2', '5', '5', '1' ]
+
 function sortByFrequency(array) {
     let frequency = {};
     let sortAble = [];
@@ -33,8 +36,6 @@ function sortByFrequency(array) {
     
 }
 
-//Example Suppose you have an array [2, 2, 1, 4, 2,5, 4,4,4, 5]
 
 console.log(sortByFrequency([2, 2, 1, 4, 2,5, 4,4,4, 5]))
 
-//Answer : [ '4', '4', '4', '4', '2', '2', '2', '5', '5', '1' ]

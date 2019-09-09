@@ -18,7 +18,7 @@ function isPermutation(str1,str2){
 		if(dict[str1[i]]){
 			dict[str1[i]] += 1;
 		}else{
-			dict[str1[i]] = 1;
+			dict[str1[i]] === 1;
 		}
 	}
 
@@ -33,7 +33,7 @@ function isPermutation(str1,str2){
 
 	for(var k in dict){
 
-		if(dict[k] != 0){
+		if(dict[k] !== 0){
 			return false;
 		} 
 	}
