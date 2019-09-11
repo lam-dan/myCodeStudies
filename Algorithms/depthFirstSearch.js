@@ -43,7 +43,7 @@ class Node {
         // We start at the root node 'A' and push in the that value into the array 
         array.push(this.name);
         // Then we call dephFirstSearch for each of the children verticies of the root node 'A'
-        for(const child in this.children){
+        for(const child of this.children){
             // For each of the children node, we recurisvely call depthFirstSearch on it and pass in the root name and the same array
             child.depthFirstSearch(array)
         }
