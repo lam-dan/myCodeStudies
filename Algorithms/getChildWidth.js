@@ -66,11 +66,9 @@ function getChildWidth(widthInformation, childIndex) {
   let totalChildrenWidth= 0;
   for (let i = 0; i < widthInformation.children.length; i++) {
     totalChildrenWidth += Number(widthInformation.children[i].width.slice(0, -2)); //400
-  }
-  extraSpace = containerWidth - totalChildrenWidth; //100
-  for (let i = 0; i < widthInformation.children.length; i++) {
     totalGrowthRate += widthInformation.children[i].growthFactor; //4
   }
+  extraSpace = containerWidth - totalChildrenWidth; //100
   const rate = extraSpace / totalGrowthRate; //25
   const output = rate * currentGrowthFactor + Number(widthInformation.children[childIndex].width.slice(0, -2));
   return output;
