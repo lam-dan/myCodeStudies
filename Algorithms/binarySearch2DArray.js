@@ -7,21 +7,16 @@
  */
 var searchMatrix = function(matrix, target) {
     //# of rows, 3 total for each element in the array
-    var row = matrix.length;
+    let row = matrix.length;
     //# of columns - 4 for the length of the first element
-    var columns = matrix[0].length;
-
+    let columns = matrix[0].length;
     //Start at the beginning of the 2D array
-    var start = 0;
-
-    
-    var end = row * columns - 1;
-    var mid = 0;
-
+    let start = 0;
+    let end = row * columns - 1;
     while (start <= end) {
-        mid = Math.floor((start + end) / 2);
-        var i = Math.floor((mid / columns));
-        var j = mid - i * columns;
+        const mid = Math.floor((start + end) / 2);
+        const i = Math.floor((mid / columns));
+        const j = mid - i * columns;
         if (matrix[i][j] === target) {
             return true;
         } else if(matrix[i][j] < target) {
