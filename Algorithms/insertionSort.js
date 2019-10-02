@@ -10,17 +10,18 @@
 // after the last swap we don't need to compare the 0 index to the one previously. THat would also cause an error
 // since you're comparing 0 index to -1 of an array.
 
-function insertionSort(array) {
-  for (let i = 1; i < array.length; i++) {
-    let j = i;
-    while (j > 0 && array[j] < array[j - 1]) {
-      const temp = array[j - 1];
-      array[j - 1] = array[j];
-      array[j] = temp;
-      j -= 1;
-    }
+let insertionSort = (array) => {
+  let length = array.length;
+  for (let i = 1; i < length; i++) {
+      let currentElement = array[i];
+      let j = i - 1;
+      while (j >= 0 && array[j] > currentElement) {
+        array[j + 1] = array[j];
+          j -= 1;
+      }
+      array[j + 1] = currentElement;
   }
   return array;
-}
+};
 
 console.log(insertionSort([8,5,2,9,5,6,3]));
