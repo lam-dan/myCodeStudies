@@ -5,31 +5,60 @@
 // Input: [1,2,3,4,5,6,7,8],3
 // Output: [[1,2,3],[4,5,6],7,8]
 
-function arrayDivide(array,int){
-    const result = [];
-    let newArray = [];
-    let position = array.length;
-    let count = 0;
-    const stop = array.length%int;
-    for( let i = 0; i<array.length;i++){
-        if(position === stop){
-            break
-        }
-        if(count<int){
-            newArray.push(array[i])
-            count++;
-        }
-        if(count === int-1){
-            result.push(newArray);
-            newArray = [];
-            count = 0;
-        }
-        position --;
+// function arrayDivide(array,int){
+//     const result = [];
+//     let newArray = [];
+//     let position = array.length;
+//     let count = 0;
+//     const stop = array.length%int;
+//     for( let i = 0; i<array.length;i++){
+//         if(position === stop){
+//             break
+//         }
+//         if(count<int){
+//             newArray.push(array[i])
+//             count++;
+//         }
+//         if(count === int-1){
+//             result.push(newArray);
+//             newArray = [];
+//             count = 0;
+//         }
+//         position --;
+//     }
+//     for(let i = 0;i<stop;i++){
+//         result.push(array[array.length-stop+i])
+//     }
+//     return result;
+// }
+
+function arrayDivide(array, int) {
+  const result = [];
+  let newArray = [];
+  let count = 0;
+  const remainder = array.length % int;
+  const stopIndex = array.length - (array.length % int);
+
+  for (let i = 0; i < array.length; i++) {
+    if (i === stopIndex) {
+      break;
     }
-    for(let i = 0;i<stop;i++){
-        result.push(array[array.length-stop+i])
+    if (count < int) {
+      newArray.push(array[i]);
+      count++;
     }
-    return result;
+    if (count === int) {
+      result.push(newArray);
+      newArray = [];
+      count = 0;
+    }
+  }
+
+  for (let i = 0; i < remainder; i++) {
+    result.push(array[stopIndex + i]);
+  }
+
+  return result;
 }
 
-console.log(arrayDivide([1,2,3,4,5,6,7,8],3));
+console.log(arrayDivide([1, 2, 3, 4, 5, 6, 7, 8], 3));

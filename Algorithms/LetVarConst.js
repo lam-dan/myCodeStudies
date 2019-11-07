@@ -18,7 +18,7 @@ function varScope() {
   console.log(greeter);
 }
 
-// varScope();
+varScope();
 
 // Var variables can be re-declared and updated
 // Output: 'say Hello instead'
@@ -28,7 +28,7 @@ function redeclareVar() {
   console.log(greeter);
 }
 
-// redeclareVar();
+redeclareVar();
 
 function updateVar(){
     var greeter = 'hey hi';
@@ -56,7 +56,7 @@ function letScope() {
   console.log(greeter);
 }
 
-// letScope();
+letScope();
 
 // Let can be update but not re-declared.
 // Output: error
@@ -67,7 +67,7 @@ function redeclareLet(){
     console.log(greeter);
 }
 
-// redeclareLet();
+redeclareLet();
 
 function updateLet(){
     let greeter = 'hey hi';
