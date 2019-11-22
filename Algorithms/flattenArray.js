@@ -18,7 +18,7 @@ function flatten(arr) {
   var arr0 = [0, 1, 2, 3, 4];
   var arr1 = [[0,1], 2, [3, 4]]; // [[1,2],[1,2],1,2]
   var arr2 = [[[0, 1], 2], 3, 4];
-  var arr3 = [[[[0], 1], 2], 3, 4];
+  var arr3 = [[[[0], 1], 2], [3, [4,1]]];
   console.log(flatten(arr0)); // [0, 1, 2, 3, 4]
   console.log(flatten(arr1)); // [0, 1, 2, 3, 4]
   console.log(flatten(arr2)); // [0, 1, 2, 3, 4]
