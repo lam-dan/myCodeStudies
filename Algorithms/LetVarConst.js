@@ -102,7 +102,7 @@ const a;
 console.log(a); // outputs undefined
 
 // Differences
-// 1)	Var declarations are globally scoped or functioned scoped while let and const are block scoped.
+// 1)	Var declarations are globally scoped or functionally scoped while let and const are block scoped.
 // 2)	Var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared
 // 3)	They are all hoisted to the top of their scope but while var variables are initialized with undefined, let, and const variables are not initialized.
 // 4)	While var and let can be declared without being initialized, const must be initialized during declaration.
