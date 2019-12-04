@@ -1,114 +1,74 @@
-let questions = [
-  {
-    text: '10 % of 1 is equal to?',
-    choices: ['A. 0.1', 'B. 3', 'C. 4', 'D. 5'],
-    category: 'easy'
-  },
-  {
-    text: '10 % of 2 is equal to?',
-    choices: ['A. 0.2', 'B. 3', 'C. 4', 'D. 5'],
-    category: 'easy'
-  },
-  {
-    text: '10 % of 3 is equal to?',
-    choices: ['A. 2', 'B. 0.3', 'C. 0.4', 'D. 5'],
-    category: 'easy'
-  },
-  {
-    text: '10 % of 4 is equal to?',
-    choices: ['A. 2', 'B. 3', 'C. 0.4', 'D. 5'],
-    category: 'easy'
-  },
-  {
-    text: '10 % of 5 is equal to?',
-    choices: ['A. 2', 'B. 3', 'C. 4', 'D. 0.5'],
-    category: 'medium'
-  },
-  {
-    text: '10 % of 6 is equal to?',
-    choices: ['A. 2', 'B. 3', 'C. 4', 'D. 0.6'],
-    category: 'hard'
-  },
-  {
-    text: '10 % of 7 is equal to?',
-    choices: ['A. 2', 'B. 3', 'C. 0.7', 'D. 0.5'],
-    category: 'medium'
-  },
-  {
-    text: '10 % of 8 is equal to?',
-    choices: ['A. 2', 'B. 0.8', 'C.4', 'D. 0.6'],
-    category: 'hard'
-  },
-  {
-    text: '10 % of 9 is equal to?',
-    choices: ['A. 0.1', 'B. 0.9', 'C. 4', 'D. 5'],
-    category: 'easy'
-  }
-];
+// function Parent(newName,newAge,newStatus){
+//   var age = newAge;
+//   var status = newStatus;
+//   this.name = newName;
+//   this.getAge = function(){return age}
+// }
 
-function shuffle(arr, easyCounter, medCounter, hardCounter) {
-  let counter = arr.length,
-    temp,
-    i;
-  let outputQuestions = [];
-  //shuffle the pool of arr
-  while (counter) {
-    i = Math.floor(Math.random() * counter--);
-    temp = arr[counter];
-    arr[counter] = arr[i];
-    arr[i] = temp;
-  }
+// Parent.prototype.getStatus = function() {return this.status}
+// Parent.prototype.getName = function() {return this.name}
+// Parent.prototype.sayHello = function() {
+//   alert('My name is '+ this.getName())
+//   alert('My age is '+ this.getAge())
+//   alert('I am'+ this.getStatus())
+// }
 
-    for(let j=0; j<arr.length; j++) {
+// var p1 = new Parent('Sam',23,'single')
+// p1.age = 24
+// p1.name = 'Peter'
+// p1.sayHello();
 
-      if(!easyCounter   && !medCounter  && !hardCounter ) {
-        console.log('65')
-        return outputQuestions;
-      }
-      else if(arr[j].category === "easy" && easyCounter) {
-        outputQuestions.push(arr[j]);
-        easyCounter--;
-      }
-      else if(arr[j].category === "medium" && medCounter) {
-        outputQuestions.push(arr[j]);
-        medCounter--;
-      }
-      else if(arr[j].category === "hard" && hardCounter) {
-        outputQuestions.push(arr[j]);
-        hardCounter--;
-      }
-  }
+// Set.prototype.newMethod = function(setB){
+//   var newResult = new Set();
+//   for(var item of setB){
+//     if(this.has(item)){
+//       newResult.add(item)
+//     }
+//   }
+//   return newResult;
 
-  console.log('82')
-  return false;
+// }
 
-  // let j = 0;
-  // while (easyCounter || medCounter || hardCounter ) {
-  //   if (arr[j].category === 'easy' && easyCounter) {
-  //     outputQuestions.push(arr[j]);
-  //     easyCounter--;
-  //   } else if (arr[j].category === 'medium' && medCounter) {
-  //     outputQuestions.push(arr[j]);
-  //     medCounter--;
-  //   } else if (arr[j].category === 'hard' && hardCounter) {
-  //     outputQuestions.push(arr[j]);
-  //     hardCounter--;
-  //   }
-  //   j++;
-  // }
-  // return outputQuestions;
-}
+// function result(a1,a2){
+//   var s1 = new Set ([...a1])
+//   var s2 = new Set ([...a2])
+//   return s1.newMethod(s2)
 
-console.log(shuffle(questions, 1, 2, 2));
+// }
 
-// foo = 1;
-// (function() {
-//     foo = 2;
-// })();
-// var x = function () {
-//     foo = 3;
-// };
-// (function() {
-//     var foo = 4;
-// })();
-// console.log(foo);
+// var arrA = [1,2,3,4]
+// var arrB = [3,4,5,6]
+// var myresult = result(arrA,arrB)
+
+// console.log(myresult)
+// https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
+// var y;
+// function modifyVariables(x) {
+//   var z = 5;
+//   x += 2;
+//   y += x + z;
+// }
+
+// var x = 1;
+// var y = 2;
+// var z = 3;
+
+// modifyVariables(x);
+// document.writeln(x);
+// document.writeln(y);
+// document.writeln(z);
+
+// var x = 1;
+// var y = 2;
+// var z = 3;
+// function modifyVariables(x) {
+//   var z = 5;
+//   x += 2;
+//   y += x + z;
+// }
+
+// y += 8;
+// y = 10;
+
+
+console.log(Math.round(1.5%0.2*100)/100)
