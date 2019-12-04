@@ -27,6 +27,41 @@ class BinarySearchTree {
     }
   }
 
+  levelOrderSearch(rootNode) {
+    // Check that a root node exists.
+
+    if (rootNode === null) {
+      return null;
+    }
+
+    // Create our queue and push our root node into it.
+    let results = [];
+    let queue = [];
+    queue.push(rootNode);
+    results.push(rootNode.data);
+
+    // Continue searching through as queue as long as it's not empty.
+    while (queue.length > 0) {
+      // Create a reference to currentNode, at the top of the queue.
+      let currentNode = queue[0];
+
+      // If currentNode has a left child node, add it to the queue.
+      if (currentNode.left !== null) {
+        queue.push(currentNode.left);
+        results.push(currentNode.left.data);
+      }
+      // If currentNode has a right child node, add it to the queue.
+      if (currentNode.right !== null) {
+        queue.push(currentNode.right);
+        results.push(currentNode.right.data);
+      }
+      // Remove the currentNode from the queue.
+      queue.shift();
+    }
+    return results;
+    // Continue looping through the queue until it's empty!
+  }
+
   // Method to insert a node in a tree, it moves over the tree to find the location
   // to insert a node with a given data.
   insertNode(node, newNode) {
@@ -129,6 +164,7 @@ class BinarySearchTree {
     }
   }
 
+  // Depth First Traversals
   // Performs inorder traversal of the tree
   // 1. Traverse the left subtree i.e perform inorder on left subtree
   // 2. Visit the root
@@ -144,12 +180,14 @@ class BinarySearchTree {
   // 1. Visit the root
   // 2. Traverse the left subtree i.e perform inorder on left subtree
   // 3. Traverse the right subtree i.e perform inorder on right subtree
-  preorder(node) {
+  preorder(node, arr = []) {
     if (node != null) {
       console.log(node.data);
-      this.preorder(node.left);
-      this.preorder(node.right);
+      arr.push(node.data);
+      this.preorder(node.left, arr);
+      this.preorder(node.right, arr);
     }
+    return arr;
   }
   // Performs postorder traversal of a tree starting from a given node.
   // 1. Traverse the left subtree i.e perform inorder on left subtree
@@ -164,43 +202,42 @@ class BinarySearchTree {
   }
 }
 
-let BST = new BinarySearchTree(); 
-BST.insert(15); 
-BST.insert(25); 
-BST.insert(10); 
-BST.insert(7); 
-BST.insert(22); 
-BST.insert(17); 
-BST.insert(13); 
-BST.insert(5); 
-BST.insert(9); 
-BST.insert(27); 
+let BST = new BinarySearchTree();
+BST.insert(15);
+BST.insert(25);
+BST.insert(10);
+BST.insert(7);
+BST.insert(22);
+BST.insert(17);
+BST.insert(13);
+BST.insert(5);
+BST.insert(9);
+BST.insert(27);
 
 // console.log(JSON.stringify(BST))
-// var root = BST.getRootNode(); 
-// BST.inorder(root); 
-// BST.remove(5); 
-// BST.inorder(root); 
+// var root = BST.getRootNode();
+// BST.inorder(root);
+// BST.remove(5);
+// BST.inorder(root);
 
+// var root = BST.getRootNode();
+// BST.inorder(root);
+// BST.remove(7);
+// BST.inorder(root);
 
-// var root = BST.getRootNode(); 
-// BST.inorder(root); 
-// BST.remove(7); 
-// BST.inorder(root); 
+// var root = BST.getRootNode();
+// BST.inorder(root);
+// BST.remove(15);
+// BST.inorder(root);
 
-// var root = BST.getRootNode(); 
-// BST.inorder(root); 
-// BST.remove(15); 
-// BST.inorder(root); 
+var root = BST.getRootNode();
+console.log('inorder traversal');
 
+// prints 9 10 13 17 22 25 27
+BST.inorder(root);
 
-var root = BST.getRootNode(); 
-console.log("inorder traversal"); 
-  
-// prints 9 10 13 17 22 25 27 
-BST.inorder(root); 
-              
-console.log("postorder traversal"); 
-BST.postorder(root); 
-console.log("preorder traversal"); 
-BST.preorder(root); 
+console.log('postorder traversal');
+BST.postorder(root);
+console.log('preorder traversal');
+console.log(BST.preorder(root));
+console.log(BST.levelOrderSearch(root));
