@@ -29,11 +29,9 @@ class BinarySearchTree {
 
   levelOrderSearch(rootNode) {
     // Check that a root node exists.
-
     if (rootNode === null) {
       return null;
     }
-
     // Create our queue and push our root node into it.
     let results = [];
     let queue = [];
@@ -48,14 +46,13 @@ class BinarySearchTree {
       // If currentNode has a left child node, add it to the queue.
       if (currentNode.left !== null) {
         queue.push(currentNode.left);
-        results.push(currentNode.left.data);
       }
       // If currentNode has a right child node, add it to the queue.
       if (currentNode.right !== null) {
         queue.push(currentNode.right);
-        results.push(currentNode.right.data);
       }
       // Remove the currentNode from the queue.
+      results.push(currentNode.data);
       queue.shift();
     }
     return results;
