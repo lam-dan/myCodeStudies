@@ -18,4 +18,4 @@ function get_reverse_of_int(int) {
   return negative ? remainder * -1 : remainder;
 }
 
-console.log(get_reverse_of_int(-678));
+console.log(get_reverse_of_int(123456789));
